@@ -11,6 +11,11 @@ function soloNumeros(array) {
   // soloNumeros([1, 'Henry', 2]) debe retornar [1, 2]
 
   // Tu código aca:
+  var arr=[];
+  arr= array.filter(function(el){
+    if(typeof(el)==="number") return el;
+  })
+  return arr;
 
 }
 

@@ -11,8 +11,14 @@ function crearClasePersona() {
       // Inicializar las propiedades de la persona con los valores recibidos como argumento
 
       // Tu código aca:
+      this.nombre = nombre;
+      this.edad = edad;
+      this.hobbies = hobbies;
+      this.amigos = amigos;
 
     }
+
+
 
     addFriend(nombre, edad) {
       // El método 'addFriend' recibe un string 'nombre' y un entero 'edad' y debe agregar un objeto:
@@ -20,6 +26,10 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
+      this.amigos.push({
+        nombre: nombre,
+        edad: edad,
+      })
 
     }
 
@@ -28,6 +38,7 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
+      this.hobbies.push(hobby);
 
     }
     getFriends() {
@@ -38,20 +49,28 @@ function crearClasePersona() {
       // persona.getFriends() debería devolver ['martin', 'toni']
 
       // Tu código aca:
-
+      return (this.amigos.map((e) =>
+        e.nombre));
     }
 
+
+
+    // El método 'getHobbies' debe retornar un arreglo con los hobbies de la persona
+    // Ej:
+    // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
+
+    // Tu código aca:
     getHobbies() {
-      // El método 'getHobbies' debe retornar un arreglo con los hobbies de la persona
-      // Ej:
-      // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
-
-      // Tu código aca:
-
+      let aux = [];
+      for (let i = 0; i < this.hobbies.length; i++) {
+        aux.push(this.hobbies[i]);
+      }
+      return aux;
     }
 
-    getPromedioEdad() {
-      // El método 'getPromedioEdad' debe retornar el promedio de edad de los amigos de una persona
+
+    /*
+ // El método 'getPromedioEdad' debe retornar el promedio de edad de los amigos de una persona
       // Ej:
       // Si la persona tuviera estos amigos:
       // {
@@ -64,13 +83,22 @@ function crearClasePersona() {
       //   }]
       // }
       // persona.getPromedioEdad() debería devolver 29 ya que (33 + 25) / 2 = 29
+*/
+    getPromedioEdad() {
 
       // Tu código aca:
-
+      let aux = 0;
+      let long = 0;
+      for (let e = 0; e < this.amigos.length; e++) {
+        aux += this.amigos[e].edad;
+        long++;
+      }
+      return aux / long;
     }
-  };
 
+  };
   return Persona;
+
 }
 
 // No modifiques nada debajo de esta linea //

@@ -4,7 +4,6 @@
   código dentro de las funciones ya definidas. 
   No comentar la funcion 
 */
-function pluck(array, propiedad) {
   // La función llamada 'pluck' recibe como argumento un array de objetos llamado 'array' y el nombre de una
   // propiedad.
   // La función debe devolver un nuevo arreglo con solo los valores dentro de la propiedad recibida
@@ -13,8 +12,11 @@ function pluck(array, propiedad) {
   // productos.pluck(productos, 'name') debería devolver ['TV LCD', 'Computadora']
   // Pista: es una buena oportunidad para usar map.
 
-  // Tu código acá:
+function pluck(array, propiedad) {
 
+  // Tu código acá:
+  let nuevoArray = array.map((a) => a[propiedad]);
+    return nuevoArray;
 }
 
 // No modifiques nada debajo de esta linea //
